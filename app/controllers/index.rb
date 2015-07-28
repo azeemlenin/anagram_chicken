@@ -9,11 +9,8 @@
 
 get '/:input' do
   a = Word.pluck(:word)
-  input = params[:input] + "\n"
-
-
-
+  input = params[:input]
+  # input.length == params[:letter].length
   @anagram = Word.anagram_for?(input,a)
-
   erb :index
 end
